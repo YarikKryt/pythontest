@@ -2,7 +2,7 @@ import math
 
 # Task A
 
-# Розрахунок індексу першої значущої цифри (m)
+# Функція розрахунку індексу першої значущої цифри (m)
 def first_significant_digit_index(number):
     if number == 0:
         return 0
@@ -20,7 +20,7 @@ def first_significant_digit_index(number):
             m -= 1
         return m
 
-# Розрахунок першої значущої цифри am
+# Функція розрахунку першої значущої цифри (am)
 def first_significant_digit(number):
     str_number = str(abs(number))
     for char in str_number:
@@ -28,7 +28,7 @@ def first_significant_digit(number):
             return char
     return '0'
 
-# Введення величин x1, x2, x3 та їх кількостей точних цифр n1, n2, n3
+# Введення величин x1, x2, x3
 x1 = float(input("Введіть x1: "))
 x2 = float(input("Введіть x2: "))
 x3 = float(input("Введіть x3: "))
@@ -61,7 +61,7 @@ while n3 <= 0 or not isinstance(n3, int):
     except ValueError:
         print("Введіть дійсне ціле число.")
 
-# Розрахунок похибок Δx1, Δx2, Δx3
+# Знаходження першох значущої цифри та розрахунок похибок Δx1, Δx2, Δx3
 m1 = first_significant_digit_index(x1)
 m2 = first_significant_digit_index(x2)
 m3 = first_significant_digit_index(x3)
@@ -105,6 +105,15 @@ delta_F_relative = delta_F / abs(F) * 100
 
 # Виведення результатів завдання А
 print("\nЗавдання А) ")
+# Виведення заданих користувачем x1,x2,x3
+print(f"\nx1 = {x1}")
+print(f"x1 = {x2}")
+print(f"x1 = {x3}")
+# Виведення кількості точних цифр n1,n2,n3
+print(f"\nn1 = {n1}")
+print(f"n2 = {n2}")
+print(f"n3 = {n3}")
+
 print(f"\nАбсолютні похибки:")
 print(f"\nΔx1 = {delta_x1}")
 print(f"Δx2 = {delta_x2}")
@@ -121,18 +130,18 @@ print(f"Відносна похибка обчислення δF = {delta_F_rela
 
 #Task B
 
-# Задана похибка Δ
+# Задана згідно варіатну похибка Δ
 delta = 15 * 10**-3
 
 # Розрахунок n1
 n1 = abs(m1 + 1 - math.log10(2 * delta))
 n1 = round(n1)  # Округлення до найближчого цілого числа
 
-# Розрахунок n1
+# Розрахунок n2
 n2 = abs(m2 + 1 - math.log10(2 * delta))
 n2 = round(n2)  # Округлення до найближчого цілого числа
 
-# Розрахунок n1
+# Розрахунок n3
 n3 = abs(m3 + 1 - math.log10(2 * delta))
 n3 = round(n3)  # Округлення до найближчого цілого числа
 
