@@ -7,6 +7,8 @@ def date(day, month, year):
         print("Error: invalid month, write a correct day")
     elif type(year) != int:
         print("Error: invalid year, write an integer")
+    elif year <= 0:
+        print("Error: invalid year, year can't be less or equal to 0")
     elif month == 2 and day > 29:
         print("Error: February can't have more than 29 days")
     elif month in max30daysList and day > 30:
@@ -29,7 +31,7 @@ def date(day, month, year):
             day = day - 1
             print("Date subtract 1 day = ", f"{day}/{month}/{year}")
 
-date(1,2,2024)
+date(28,2,2015)
 
 
 
